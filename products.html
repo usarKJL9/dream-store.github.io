@@ -1,76 +1,159 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المنتجات - Dream Store</title>
+    <title>Products - Dream Store</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <!-- Header -->
+    <header class="header">
         <nav class="navbar">
-            <div class="logo">
-                <h1>Dream Store</h1>
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>Dream Store</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link active">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="products.html">المنتجات</a></li>
-                <li><a href="about.html">من نحن</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
-            </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="products-header">
-            <h2>منتجاتنا المميزة</h2>
-            <div class="category-filter">
-                <button class="filter-btn active" data-category="all">جميع المنتجات</button>
-                <button class="filter-btn" data-category="encrypted">Encrypted</button>
-                <button class="filter-btn" data-category="opensource">Open Source</button>
-            </div>
-        </section>
+    <!-- Products Header -->
+    <section class="hero" style="padding: 3rem 0; background: linear-gradient(135deg, #3a0ca3 0%, #4361ee 100%);">
+        <div class="container">
+            <h1 style="color: white; text-align: center; margin-bottom: 1rem;">Our Products</h1>
+            <p style="color: white; text-align: center; opacity: 0.9; max-width: 600px; margin: 0 auto;">
+                Browse our collection of premium FiveM scripts and resources
+            </p>
+        </div>
+    </section>
 
-        <section class="products-grid">
-            <div class="product-card" data-category="encrypted">
-                <div class="product-card-content">
-                    <h3>Weed Script 🌿</h3>
-                    <p>نظام متكامل لزراعة وتجارة الماريجوانا مع واجهة متطورة وتجربة لعب واقعية</p>
-                    <div class="product-price">
-                        <span class="price">$25</span>
-                        <button class="buy-btn">إضافة إلى السلة</button>
+    <!-- Products Filter -->
+    <section class="features" style="padding: 2rem 0;">
+        <div class="container">
+            <div class="filter-buttons" style="text-align: center; margin-bottom: 2rem;">
+                <button class="btn filter-btn active" data-filter="all">All Products</button>
+                <button class="btn filter-btn" data-filter="encrypted">Encrypted</button>
+                <button class="btn filter-btn" data-filter="opensource">Open Source</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="featured" style="padding-top: 0;">
+        <div class="container">
+            <div class="products-grid">
+                <div class="product-card" data-category="encrypted">
+                    <div class="product-badge">Encrypted</div>
+                    <div class="product-icon">
+                        <i class="fas fa-cannabis"></i>
                     </div>
+                    <h3 class="product-title">Weed System</h3>
+                    <p class="product-description">Complete marijuana growing and selling system with advanced features and realistic gameplay.</p>
+                    <div class="product-price">$25</div>
+                    <a href="#" class="btn btn-product">Purchase Now</a>
+                </div>
+
+                <div class="product-card" data-category="encrypted">
+                    <div class="product-badge">Encrypted</div>
+                    <div class="product-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="product-title">Gang System</h3>
+                    <p class="product-description">Advanced gang management system with territories, wars, and drug trading features.</p>
+                    <div class="product-price">$30</div>
+                    <a href="#" class="btn btn-product">Purchase Now</a>
+                </div>
+
+                <div class="product-card" data-category="opensource">
+                    <div class="product-badge">Open Source</div>
+                    <div class="product-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="product-title">FBI Job</h3>
+                    <p class="product-description">Complete FBI job system with investigations, advanced pursuit systems, and realistic roleplay.</p>
+                    <div class="product-price">$20</div>
+                    <a href="#" class="btn btn-product">Purchase Now</a>
+                </div>
+
+                <div class="product-card" data-category="encrypted">
+                    <div class="product-badge">Encrypted</div>
+                    <div class="product-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="product-title">Vehicle System</h3>
+                    <p class="product-description">Advanced vehicle system with customizations, tuning, and realistic handling.</p>
+                    <div class="product-price">$35</div>
+                    <a href="#" class="btn btn-product">Purchase Now</a>
+                </div>
+
+                <div class="product-card" data-category="opensource">
+                    <div class="product-badge">Open Source</div>
+                    <div class="product-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="product-title">Housing System</h3>
+                    <p class="product-description">Complete housing system with furniture, storage, and customizable interiors.</p>
+                    <div class="product-price">$28</div>
+                    <a href="#" class="btn btn-product">Purchase Now</a>
+                </div>
+
+                <div class="product-card" data-category="encrypted">
+                    <div class="product-badge">Encrypted</div>
+                    <div class="product-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3 class="product-title">Business System</h3>
+                    <p class="product-description">Advanced business management system with employees, profits, and expansion.</p>
+                    <div class="product-price">$40</div>
+                    <a href="#" class="btn btn-product">Purchase Now</a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="product-card" data-category="encrypted">
-                <div class="product-card-content">
-                    <h3>Gang System 🔫</h3>
-                    <p>نظام عصابات متكامل مع إدارة الأعضاء، الحروب، الأراضي، وتجارة المخدرات</p>
-                    <div class="product-price">
-                        <span class="price">$30</span>
-                        <button class="buy-btn">إضافة إلى السلة</button>
-                    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dream Store</h3>
+                    <p>Your trusted source for premium FiveM scripts and resources.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fab fa-discord"></i> Discord: kjl9</p>
+                    <p>We're here to help you 24/7</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="product-card" data-category="opensource">
-                <div class="product-card-content">
-                    <h3>FBI Job 🚔</h3>
-                    <p>وظيفة متكاملة لمباحث الـFBI مع أنظمة متقدمة للملاحقة والتحقيق</p>
-                    <div class="product-price">
-                        <span class="price">$20</span>
-                        <button class="buy-btn">إضافة إلى السلة</button>
-                    </div>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dream Store. All rights reserved.</p>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Dream Store. جميع الحقوق محفوظة.</p>
-            <p>للتواصل والدعم: <strong>الديسكورد: kjl9</strong></p>
         </div>
     </footer>
 
