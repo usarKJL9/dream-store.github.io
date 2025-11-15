@@ -4,201 +4,165 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
+:root {
+    --primary-bg: #0a0a0a;
+    --secondary-bg: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --accent-color: #00aa5b;
+    --accent-hover: #008c4a;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --border-color: #404040;
 }
 
-/* التنقل */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* التنقل - Tebex Style */
 .navbar {
-    background-color: #2c3e50;
+    background-color: var(--secondary-bg);
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 2px solid var(--accent-color);
+    box-shadow: 0 2px 20px rgba(0, 170, 91, 0.1);
 }
 
 .logo h1 {
-    color: white;
+    color: var(--text-primary);
     font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, var(--accent-color), #00cc6a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-}
-
-.nav-links li {
-    margin-left: 2rem;
+    gap: 2rem;
 }
 
 .nav-links a {
-    color: white;
+    color: var(--text-secondary);
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
 
 .nav-links a:hover {
-    color: #ecf0f1;
+    color: var(--text-primary);
+    background-color: rgba(0, 170, 91, 0.1);
 }
 
-/* القسم الرئيسي */
+/* الهيرو - Cfx Style */
 .hero {
-    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-    color: white;
-    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(26, 26, 26, 0.9)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%2300aa5b" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+    padding: 6rem 2rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(0, 170, 91, 0.1) 0%, transparent 50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
+    background: linear-gradient(45deg, #ffffff, var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: white;
-    color: #2c3e50;
-    padding: 0.8rem 2rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-hover));
+    color: white;
+    padding: 1rem 2.5rem;
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-    transition: background-color 0.3s;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 170, 91, 0.3);
 }
 
 .cta-button:hover {
-    background-color: #ecf0f1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 170, 91, 0.4);
 }
 
-/* الفئات */
+/* الفئات - Tebex Grid */
 .categories {
-    padding: 3rem 2rem;
-    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--secondary-bg);
 }
 
 .categories h3 {
     font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
 }
 
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .category-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    background: var(--card-bg);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), transparent);
 }
 
 .category-card:hover {
     transform: translateY(-5px);
-}
-
-/* المنتجات */
-.products-header {
-    padding: 2rem;
-    text-align: center;
-}
-
-.category-filter {
-    margin: 2rem 0;
-}
-
-.filter-btn {
-    background: white;
-    border: 2px solid #2c3e50;
-    padding: 0.5rem 1rem;
-    margin: 0 0.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.filter-btn.active {
-    background-color: #2c3e50;
-    color: white;
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.product-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.product-card h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-}
-
-.price {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #27ae60;
-    margin: 1rem 0;
-}
-
-.buy-btn {
-    background-color: #2c3e50;
-    color: white;
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100%;
-}
-
-.buy-btn:hover {
-    background-color: #34495e;
-}
-
-/* التذييل */
-footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
-}
-
-/* التجاوب */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    .nav-links {
-        margin-top: 1rem;
-    }
-
-    .nav-links li {
-        margin: 0 0.5rem;
-    }
-
-    .hero-content h2 {
-        font-size: 2rem;
-    }
-      }
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba
